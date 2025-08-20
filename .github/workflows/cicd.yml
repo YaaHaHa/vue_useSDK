@@ -13,12 +13,12 @@ jobs:
           version: 8.6.2
       - uses: actions/setup-node@v3
         with:
-          node-version: 16.X
-      - run: npm install
-      - run: npm run build
+          node-version: 16.x
+      - run: pnpm install
+      - run: pnpm run build
       - name: action-Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.DEVELOP_SECRET }}
-          BRANCH: gh-pages
+          publish_branch: gh-pages
           publish_dir: ./dist
