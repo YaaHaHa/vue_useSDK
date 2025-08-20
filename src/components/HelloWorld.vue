@@ -1,9 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from "vue";
 
-defineProps<{ msg: string }>()
+onMounted(() => {
+  let testNum = null;
+  if (testNum!.length > 1) {
+    console.log("报错了！");
+  }
+});
+defineProps<{ msg: string }>();
 
-const count = ref(0)
+const count = ref(0);
 </script>
 
 <template>
