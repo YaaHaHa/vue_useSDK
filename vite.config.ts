@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [vue()],
   base: "/vue_useSDK/",
   build: {
-    sourcemap: false,
+    sourcemap: true,
   },
 });

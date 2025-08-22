@@ -4,7 +4,6 @@ const MAP_URL = "";
 
 // 获取报错源文件
 export async function getOriginalCode(stackFrame: any) {
-  debugger;
   const sourcemap = await axios.get(`${MAP_URL}/${stackFrame.fileName}.map`);
   const fileContent = sourcemap.data;
   // 解析map文件
