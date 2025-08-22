@@ -1,11 +1,13 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp } from "vue";
+import ErrorStackParser from "error-stack-parser";
+import "./style.css";
+import App from "./App.vue";
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.config.errorHandler = (err, instance) => {
-  console.error(err)
-}
+app.config.errorHandler = (err, vm) => {
+  const ErrorStack = ErrorStackParser.parse(err as Error);
+  console.error("err", err, "ErrorStack", ErrorStack, "vm", vm);
+};
 
-app.mount('#app')
+app.mount("#app");
