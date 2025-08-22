@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 20.13.1
       - run: pnpm install
-      - run: pnpm run build
+      - run: pnpm run build_f
       - name: action-Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
