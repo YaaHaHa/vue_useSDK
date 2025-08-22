@@ -5,7 +5,7 @@ const MAP_URL = "https://yaahaha.github.io/vue_useSDK";
 // 获取报错源文件
 export async function getOriginalCode(stackFrame: any) {
   const sourcemap = await axios.get(
-    `${MAP_URL}/${stackFrame.fileName.split("vue_useSDK")}.map`
+    `${MAP_URL}/${stackFrame.fileName.split("vue_useSDK")[1]}.map`
   );
   const fileContent = sourcemap.data;
   // 解析map文件
