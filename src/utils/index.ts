@@ -1,10 +1,12 @@
 import axios from "axios";
 import SouceMap from "source-map-js";
-const MAP_URL = "";
+const MAP_URL = "https://yaahaha.github.io/vue_useSDK";
 
 // 获取报错源文件
 export async function getOriginalCode(stackFrame: any) {
-  const sourcemap = await axios.get(`${MAP_URL}/${stackFrame.fileName}.map`);
+  const sourcemap = await axios.get(
+    `${MAP_URL}/${stackFrame.fileName.split("vue_useSDK")}.map`
+  );
   const fileContent = sourcemap.data;
   // 解析map文件
   const smc = await new SouceMap.SourceMapConsumer(fileContent);
