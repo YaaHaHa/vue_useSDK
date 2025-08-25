@@ -17,6 +17,7 @@ export async function getOriginalCode(stackFrame: any) {
   });
   // 获取真实错误代码
   const originalCode = smc.sourceContentFor(originalPosition.source);
+  console.log("originalCode：", originalCode);
   console.log("还原后的错误代码", originalCode);
   return originalCode;
 }
